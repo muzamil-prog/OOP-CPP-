@@ -1,19 +1,26 @@
 #include <iostream>
 using namespace std;
-
-class A {
-public:
-    virtual void show() { cout << "Base\n"; }
+class box{
+    private:
+    int length;
+    int width;
+    int height;
+    public:
+    
+    
+    box setValue(int length, int width, int height){
+        this->length=length;
+        this->width=width;
+        this->height=height;
+        return *this;
+    }
+    void volume(){
+        cout <<"voule is:"<<length*width*height<<endl;
+    }
 };
-
-class B : public A {
-public:
-    void show() override { cout << "Derived\n"; }
-};
-
-int main() {
-    A* p;
-    B obj;
-    p = &obj;
-    p->show();
+int main(){
+    box v;
+    v=v.setValue(5,6,8);
+    v.volume();
+    return 0;
 }
