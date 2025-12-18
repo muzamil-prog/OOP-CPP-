@@ -1,26 +1,27 @@
 #include <iostream>
 using namespace std;
-class box{
-    private:
-    int length;
-    int width;
-    int height;
+class rectagle{
     public:
-    
-    
-    box setValue(int length, int width, int height){
-        this->length=length;
-        this->width=width;
+    int height;
+    int width;
+    int length;
+    public:
+    void setData(int height , int width,int length){
         this->height=height;
-        return *this;
+        this->width=width;
+        this->length=length;
     }
-    void volume(){
-        cout <<"voule is:"<<length*width*height<<endl;
+    int area(){
+        return length*width;
     }
+   void show(rectagle &r);
 };
+void show(rectagle &r){
+        cout <<"width"<<r.width<<"height:"<<r.height<<"length:"<<r.length<<"area:"<<r.area()<<endl;
+    }
 int main(){
-    box v;
-    v=v.setValue(5,6,8);
-    v.volume();
-    return 0;
+    rectagle  r;
+    r.setData(5,6,8);
+    show(r);
+    return 0; 
 }
