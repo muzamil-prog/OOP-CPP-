@@ -1,28 +1,25 @@
 #include <iostream>
 using namespace std;
-class compair{
-    private:
-    int value;
-    public:
-    void setValue(int value){
-        this->value=value;
+
+class student {
+public:
+int roll;
+int marks;
+
+    void setData(int roll,int marks){
+        this->roll = roll;
+        this->marks = marks;
     }
-    compair greatValue(compair obj){
-        if(value>obj.value){
-            return *this;
-        }else {
-            return obj;
-        }
-    }
-    void shoe(){
-        cout <<" greater  value is:"<<value<<endl;
+
+    void show(student &obj){
+        cout << "roll " << obj.roll<<endl;
+        cout << " marks:" << obj.marks << endl;
     }
 };
+
 int main(){
-    compair r1 ,r2 ,r3;
-    r1.setValue(12);
-    r2.setValue(15);
-    r3=r1.greatValue(r2);
-    r3.shoe();
+    student s1;
+    s1.setData(101, 90);
+    s1.show(s1);
     return 0;
 }
