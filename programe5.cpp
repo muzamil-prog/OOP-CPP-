@@ -1,35 +1,21 @@
 #include <iostream>
 using namespace std;
-class tance{
-    private:
-    int feet ;
-    int inches;
+class employee{
+    string name;
+    double salary;
     public:
-    tance(int feet, int inches){
-        this->feet=feet;
-        this->inches=inches;
+ void   setValue(string n, double s){
+        name=s;
+        salary=s;
     }
-    tance(){
-
-    }
-    tance addDistance(tance d){
-        int totalInches;
-        totalInches=inches+d.inches;
-        int totalFeet;
-        totalFeet=feet+d.feet+(totalInches/12);
-        totalInches=totalInches%12;
-        return tance(totalFeet,totalInches);
-    }
-    void display(){
-        cout <<"feet:"<<feet<<endl<<"inches:"<<inches<<endl;
+    void show(employee &obj){
+        cout <<"name:"<<obj.name<<endl;
+        cout <<"salary is:"<<obj.salary<<endl;
     }
 };
 int main(){
-    tance d1(10,12);
-    tance d2(5,10);
-    tance d3;
-    d3=d1.addDistance(d2);
-    d3.display();
+    employee e1;
+    e1.setValue("ali", 20000000);
+    e1.show(e1);
     return 0;
-
 }
