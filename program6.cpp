@@ -1,24 +1,26 @@
-// code reuse ability inherteance
-
-
 #include <iostream>
 using namespace std;
-class employee{
+ class box{
+    private:
+    int height;
+    int width;
+    int length;
     public:
-    void copmany(){
-        cout<<"this is xy company"<<endl;
-
+    void setValue(int h, int w, int l){
+        height=h;
+        width=w;
+        length=l;
     }
-};
-class manger:public employee{
-    public:
-    void role(){
-        cout <<"manger mange the employeee"<<endl;
+    int volume(){
+        return height*width*length;
     }
-};
-int main(){
-    manger ob;
-    ob.copmany();
-    ob.role();
+    void show(box &b){
+    cout <<"volume is:"<<b.volume()<<endl;
+    }
+ };
+ int main(){
+    box b1;
+    b1.setValue(5,7,9);
+    b1.show(b1);
     return 0;
-}
+ }
