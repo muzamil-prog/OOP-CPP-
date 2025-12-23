@@ -1,28 +1,27 @@
-//return object from member function
-
 #include <iostream>
 using namespace std;
-class number{
-    int num;
+class Calculater{
+    private:
+    int a;
+    int b;
+    float x;
+    float y;
     public:
-    void getValue(int n){
-        num=n;
+    int add(int a, int b){
+        this->a=a;
+        this->b=b;
+        return a+b;
     }
-    number add(number obj){
-        number temp;
-        temp.num=num+obj.num;
-        return temp;
+    float add(float a, float b){
+        this->a=a;
+        this->b=b;
+        return a+b;
     }
-    void display(){
-        cout <<"number:"<<num<<endl;
-    }
+    
 };
 int main(){
-    number m1,m2,m3;
-    m1.getValue(30);
-    m2.getValue(40);
-    m3=m1.add(m2);
-    cout <<"result after addtion:"<<endl;
-    m3.display();
+    Calculater t;
+    cout <<"result of integer addtion:"<<t.add(5,6)<<endl;
+    cout <<"result of floating addtion: "<<t.add(5.6f,8.4f)<<endl;
     return 0;
 }
