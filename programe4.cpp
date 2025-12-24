@@ -1,23 +1,29 @@
 #include <iostream>
 using namespace std;
-class car{
+class Complex{
     private:
-    string name;
-    int model;
+    int real;
+    int imag;
     public:
-    void setValue(string name, int model){
-        this->name=name;
-        this->model=model;
+    Complex(int real=0, int imag=0){
+        this->real=real;
+        this->imag=imag;
+        
+
+        
     }
-    void show(car obj){
-        cout <<"name is:"<<obj.name<<endl;
-        cout <<"the maodel is:"<<obj.model<<endl;
+    Complex operator +(Complex obj){
+        return Complex(real+obj.real, imag+obj.imag);
+    }
+    void show(){
+        cout <<real<<"+"<<imag<<"i"<<endl;
     }
 };
 int main(){
-    car c1;
-    c1.setValue("toyata", 2023);
-    c1.show(c1);
+    Complex obj1(4,6);
+    Complex obj2(7,8);
+    Complex obj3=obj1+obj2;
+    obj3.show();
     return 0;
-    
+
 }
