@@ -1,26 +1,23 @@
 #include <iostream>
 using namespace std;
- class box{
+class Student{
     private:
-    int height;
-    int width;
-    int length;
+    int marks;
     public:
-    void setValue(int h, int w, int l){
-        height=h;
-        width=w;
-        length=l;
+    Student(int marks){
+        this->marks=marks;
     }
-    int volume(){
-        return height*width*length;
+    bool operator==(Student s){
+        return bool(marks==s.marks);
     }
-    void show(box &b){
-    cout <<"volume is:"<<b.volume()<<endl;
+};
+int main(){
+    Student s1(90);
+    Student s2(95);
+    if(s1==s2){
+        cout <<"The both student have same marks"<<endl;
+
+    }else{
+        cout <<"the marks have different"<<endl;
     }
- };
- int main(){
-    box b1;
-    b1.setValue(5,7,9);
-    b1.show(b1);
-    return 0;
- }
+}
