@@ -1,21 +1,24 @@
-#include <iostream>
+#include <iostream> 
 using namespace std;
-class employee{
-    string name;
-    double salary;
+class Display{
     public:
- void   setValue(string n, double s){
-        name=s;
-        salary=s;
+    int display(int x){
+        cout <<"intege value :"<<x<<endl;
+        return x;
     }
-    void show(employee &obj){
-        cout <<"name:"<<obj.name<<endl;
-        cout <<"salary is:"<<obj.salary<<endl;
+    string display(string name){
+        cout <<"string value :"<<name<<endl;
+        return name;
+    }
+    float display(float b){
+        cout <<"float value :"<<b<<endl;
+        return b;
     }
 };
 int main(){
-    employee e1;
-    e1.setValue("ali", 20000000);
-    e1.show(e1);
+    Display d;
+    d.display(8);
+    d.display("Muzammil Hussain");
+    d.display(90.0f);
     return 0;
 }
