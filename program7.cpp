@@ -1,34 +1,24 @@
-// input get menber in hertance
-
-
 #include <iostream>
 using namespace std;
-class student{
-    public:
-    int name;
-    
-    void getName(){
-        cout <<"enter your name"<<endl;
-        cin >>name;
-    }
-};
-class marks:public student{
+class Counter{
     private:
-    int marks;
+    int x;
     public:
-void getMarks(){
-    cout <<"enter your marks"<<endl;
-    cin >> marks;}
-    void show(){
-        cout <<"name="<<name<<"marks="<<marks;
-
+    Counter(int x=0){
+        this->x=x;
     }
-
+    int operator ++(){
+         x++ ;
+        
+    }
+    void show(){
+        cout <<"the value of after increament:"<<x<<endl;
+    }
 };
 int main(){
- marks ob;
- ob.getName();
- ob.getMarks();
- ob.show();
- return 0;   
+    Counter c(5);
+    c.show();
+    ++c;
+    c.show();
+    return 0;
 }
